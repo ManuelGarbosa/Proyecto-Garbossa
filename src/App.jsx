@@ -7,9 +7,10 @@ function App() {
   return (
     <>
       <h1> Clase 5</h1>
-      <Contador inicial={1} Stock={10}/>
+      {/* <Contador inicial={1} Stock={10}/>
       <Categorias/>
-      <UseRef/>
+      <UseRef/> */}
+      <Promesas/>
     </>
     
     
