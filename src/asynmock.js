@@ -12,3 +12,16 @@ export const getProductos = () => {
         }, 2000)
     })
 }
+
+
+
+//creamos una nueva funcion que nos retorne un solo item
+
+export const getUnproducto = (id) => {
+    return new promise(resolve => {
+        setTimeout(() => {
+            const producto = productos.find(prod => prod.id === id);
+            resolve(producto);
+        }, 2000);
+    })
+}
