@@ -1,29 +1,21 @@
-import './App.css';
-import Contador from './Components/Contador/Contador';
-import Categorias from './Components/Categorias/Categorias';
-import UseRef from './Components/UseRef/UseRef';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
-import Promesas from './Components/Promesas/Promesas';
-import Fetch from './Components/Fetch/Fetch';
-import AsyncAwait from './Components/Fetch/AsyncAwait';
-import Simpsons from './Components/Fetch/Simpsons';
-import Netflix from './Components/Fetch/Netflix';
+import "./App.css";
+import NavBar from "./Components/NavBar/NavBar";
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
+import DetailContainer from "./Components/DetailContainer/DetailContainer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 function App() {
   return (
     <>
-      <h1> Clase 5</h1>
-       {/* <Contador inicial={1} Stock={10}/>
-      <Categorias/>
-      <UseRef/> 
-      <ItemListContainer greeting="Productos"/> 
-       <Promesas/>
-      <Fetch/> 
-       <AsyncAwait/>
-      <Simpsons/> */}
-      <Netflix/>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer/>} />
+          <Route path="/categoria/:idCategoria" element={<ItemListContainer/>} />
+          <Route path="/item/:idItem" element={<DetailContainer/>} />
+        </Routes>
+      </BrowserRouter>
     </>
-    
-    
   );
 }
 

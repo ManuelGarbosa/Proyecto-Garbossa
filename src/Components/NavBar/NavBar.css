@@ -1,0 +1,21 @@
+
+.container {
+   
+    width: 800px;
+  }
+h1 {
+  color: #637566;
+  text-decoration: none;
+}
+
+.Item {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding:3rem;
+}
+
+.Item:hover {
+  color: #637566;
+  transition: 0.5s;
+}

@@ -1,18 +1,26 @@
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
-import { getProductos } from "../../asynmock";
+import { getProductos, getProductosPorCategoria } from "../../asynmock";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
 
+  const { idCategoria } = useParams();
+
   useEffect(() => {
-    getProductos()
-      .then((respuesta) => setProductos(respuesta))
-      .catch((error) => console.log(error));
-  }, []);
+    const funcionProductos = idCategoria
+      ? getProductosPorCategoria
+      : getProductos;
+
+    funcionProductos(idCategoria)
+      .then((res) => setProductos(res))
+      .catch((error) => console.error(error));
+  }, [idCategoria]);
+
   return (
     <>
-      <h2> {greeting} </h2>
+      <h2 className="titulo"> {greeting} </h2>
       <ItemList productos={productos} />
     </>
   );
