@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
-import { getProductos, getProductosPorCategoria } from "../../asynmock";
+//import { getProductos, getProductosPorCategoria } from "../../asynmock";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, where, query } from "firebase/firestore";
+import { db } from "../../Services/Config";
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
@@ -9,14 +11,30 @@ const ItemListContainer = ({ greeting }) => {
   const { idCategoria } = useParams();
 
   useEffect(() => {
-    const funcionProductos = idCategoria
-      ? getProductosPorCategoria
-      : getProductos;
+    const misProductos = idCategoria
+      ? query(collection(db, "Productos"), where("idCat", "==", idCategoria))
+      : collection(db, "Productos");
 
-    funcionProductos(idCategoria)
-      .then((res) => setProductos(res))
-      .catch((error) => console.error(error));
+    getDocs(misProductos)
+      .then((res) => {
+        const nuevosProductos = res.docs.map((doc) => {
+          const data = doc.data();
+          return { id: doc.id, ...data };
+        });
+        setProductos(nuevosProductos);
+      })
+      .catch((error) => console.log(error));
   }, [idCategoria]);
+
+  // useEffect(() => {
+  //   const funcionProductos = idCategoria
+  //     ? getProductosPorCategoria
+  //     : getProductos;
+
+  //   funcionProductos(idCategoria)
+  //     .then((res) => setProductos(res))
+  //     .catch((error) => console.error(error));
+  // }, [idCategoria]);
 
   return (
     <>
