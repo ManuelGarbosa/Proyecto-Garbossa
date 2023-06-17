@@ -11,7 +11,7 @@ const CartWidget = () => {
     "https://static.vecteezy.com/system/resources/previews/004/458/418/non_2x/shopping-cart-flat-linear-long-shadow-icon-add-to-cart-sign-line-symbol-vector.jpg";
   return (
     <div>
-      <Link to="/cart">
+      <Link className="Cart" to="/cart">
         <img src={miImagen} alt="Carrito de compras" />
         {CantidadTotal > 0 && <span> {CantidadTotal} </span>}
       </Link>

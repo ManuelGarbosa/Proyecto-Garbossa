@@ -5,3 +5,10 @@ img {
 p{
     margin-left: 35px;
 }
+
+.Cart {
+    text-decoration: none;
+    color:  #333333;
+    font-size: 25px;
+    font-weight: bold;
+}

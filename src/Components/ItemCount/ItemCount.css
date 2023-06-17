@@ -1,0 +1,51 @@
+/* ItemCount.css */
+.Container{
+        display: flex;
+        align-items: center;
+       justify-content: center;
+       padding: 3rem 0 1rem 0;   
+}
+
+
+.Count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    margin-bottom: 10px;
+  }
+  
+  .Count button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .Count p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .Count button:hover {
+    background-color: #555;
+  }
+  
+  .AddToCartButton {
+    background-color: #f9bc02;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .AddToCartButton:hover {
+    background-color: #ffc600;
+  }
+  

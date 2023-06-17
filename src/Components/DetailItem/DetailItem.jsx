@@ -4,16 +4,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CarritoContext } from "../../Context/CarritoContext";
 import { useContext } from "react";
-  const DetailItem = ({ id, nombre, precio, img, stock }) => {
+
+const DetailItem = ({ id, nombre, precio, img, stock }) => {
   const [agregarCantidad, setAgregarCantidad] = useState(0);
 
-const {AgregarProducto} = useContext(CarritoContext);
+  const { AgregarProducto } = useContext(CarritoContext);
 
   const manejadorCantidad = (cantidad) => {
     setAgregarCantidad(cantidad);
-     //console.log("Productos Agregados:" + cantidad);
-  const item = {id, nombre, precio};
-  AgregarProducto(item, cantidad);
+    const item = { id, nombre, precio };
+    AgregarProducto(item, cantidad);
   };
   return (
     <div className="contenedorPadre">
@@ -23,7 +23,10 @@ const {AgregarProducto} = useContext(CarritoContext);
         <h3>{id}</h3>
         <img className="detailImg" src={img} alt={nombre} />
         {agregarCantidad > 0 ? (
-          <Link to={"/cart"}> Terminar compra</Link>
+          <Link className="Terminar-Compra" to={"/cart"}>
+            {" "}
+            Terminar compra
+          </Link>
         ) : (
           <ItemCount
             inicial={1}
@@ -31,6 +34,9 @@ const {AgregarProducto} = useContext(CarritoContext);
             funcionAgregar={manejadorCantidad}
           />
         )}
+        <Link className="Seguir-Comprando" to={"/"}>
+          seguir comprando
+        </Link>
       </div>
     </div>
   );

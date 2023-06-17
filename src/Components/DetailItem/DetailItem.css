@@ -28,7 +28,50 @@
     transition: transform 0.3s ease;
 }
 
-.detailImg:hover{
-    transform: scale(1.33);
+
+.Terminar-Compra{
+    display: flex;
+    margin: 5vw;
+    height: 7vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #f9bc02;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-decoration: none;
 }
+
+.Seguir-Comprando {
+    display: flex;
+    margin: 5vw;
+    height: 7vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #f9bc02;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
  
+
+@media screen and (min-width: 1024px) {
+
+    .contenedorItem{
+        width: 50vw;
+        height: 50vw;
+    }
+    .detailImg {
+        height: 35vw;
+        width: 35vw;
+        border-radius: 5%;
+        transition: transform 0.3s ease;
+    }
+    
+     
+
+}
