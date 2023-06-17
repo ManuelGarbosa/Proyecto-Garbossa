@@ -5,8 +5,8 @@
 }
 
 .contenedorItem {
-    height: 60vw;
-    width: 60vw;
+    width: 30vw;
+    height: 30vw;
     text-align: center;
     margin: 1rem;
     background: rgba(217, 217, 217, 0.58);
@@ -21,57 +21,102 @@
     color: black;
 }
 
+
+
+.contenedorItem h2  {
+    font-size: 22px;
+}
+
+.contenedorItem h3{
+    font-size: 20px;
+}
+
 .detailImg {
-    height: 45vw;
-    width: 45vw;
+    height: 21vw;
+    width: 20vw;
     border-radius: 5%;
     transition: transform 0.3s ease;
 }
 
+.Count {
+    padding-top: 10px;
+    margin: 15px ;
+}
+
+
+
+
 
 .Terminar-Compra{
     display: flex;
-    margin: 5vw;
-    height: 7vw;
-    align-items: center;
+    height: 3vw;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
     background-color: #f9bc02;
     color: #333;
-    padding: 10px 20px;
     font-size: 20px;
     text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin:60px 0px 10px 0px;
+}
+
+.Terminar-Compra:hover{
+    background-color: #ffc600;
+    color: #333;
 }
 
 .Seguir-Comprando {
     display: flex;
-    margin: 5vw;
-    height: 7vw;
-    align-items: center;
+    height: 3vw;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
     background-color: #f9bc02;
     color: #333;
-    padding: 10px 20px;
     font-size: 20px;
     text-decoration: none;
+    border-radius:10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.Seguir-Comprando:hover{
+    background-color: #ffc600;
+    color: #333;
 }
 
  
 
-@media screen and (min-width: 1024px) {
+ @media screen and (max-width: 1024px) {
 
     .contenedorItem{
         width: 50vw;
         height: 50vw;
+
     }
     .detailImg {
-        height: 35vw;
-        width: 35vw;
+        width: 40vw;
+        height: 39vw;
         border-radius: 5%;
         transition: transform 0.3s ease;
+    }
+
+
+    .Terminar-Compra{
+        height: 5vw;
+        font-size: 24px;
+    }
+
+    .Seguir-Comprando{
+        height: 5vw;
+        font-size: 24px;
+        margin-bottom:150px ;
     }
     
      
 
-}
+} 

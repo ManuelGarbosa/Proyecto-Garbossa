@@ -20,7 +20,7 @@ const DetailItem = ({ id, nombre, precio, img, stock }) => {
       <div className="contenedorItem">
         <h2> {nombre}</h2>
         <h3> ${precio}</h3>
-        <h3>{id}</h3>
+        <h3>id: {id}</h3>
         <img className="detailImg" src={img} alt={nombre} />
         {agregarCantidad > 0 ? (
           <Link className="Terminar-Compra" to={"/cart"}>
@@ -28,7 +28,7 @@ const DetailItem = ({ id, nombre, precio, img, stock }) => {
             Terminar compra
           </Link>
         ) : (
-          <ItemCount
+          <ItemCount className="Count"
             inicial={1}
             stock={stock}
             funcionAgregar={manejadorCantidad}

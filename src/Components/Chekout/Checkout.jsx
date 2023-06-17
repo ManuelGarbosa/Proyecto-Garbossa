@@ -3,9 +3,9 @@ import { useState, useContext } from "react";
 import { CarritoContext } from "../../Context/CarritoContext";
 import { db } from "../../Services/Config";
 import { collection, addDoc, getDoc, updateDoc, doc } from "firebase/firestore";
-import "./Chekout.css";
+import "./Checkout.css";
 
-const Chekout = () => {
+const Checkout = () => {
   const { carrito, VaciarCarrito, total } = useContext(CarritoContext);
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
@@ -72,7 +72,7 @@ const Chekout = () => {
 
   return (
     <div>
-      <h2>Chekout</h2>
+      <h2>Checkout</h2>
       <form onSubmit={manejadorFormulario} className="form">
         {carrito.map((producto) => (
           <div key={producto.item.id}>
@@ -125,4 +125,4 @@ const Chekout = () => {
   );
 };
 
-export default Chekout;
+export default Checkout;

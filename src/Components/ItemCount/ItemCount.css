@@ -13,6 +13,7 @@
     justify-content: space-between;
     width: 120px;
     margin-bottom: 10px;
+    
   }
   
   .Count button {
@@ -36,16 +37,31 @@
   
   .AddToCartButton {
     background-color: #f9bc02;
-    color: #333;
+    border-radius:10px;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 20vw;
+    margin-bottom: 15px;
   }
   
   .AddToCartButton:hover {
     background-color: #ffc600;
+  }
+
+  @media screen  and (max-width: 1024px) {
+    .Count button{
+      font-size: 28px;
+    }
+    .Count p {
+      font-size: 30px;
+    }
+    .AddToCartButton {
+      width: 30vw;
+      font-size: 20px;
+    }
   }
   
